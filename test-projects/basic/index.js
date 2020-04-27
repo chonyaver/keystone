@@ -43,7 +43,7 @@ const { formatISO } = require('date-fns');
 const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
 
 const keystone = new Keystone({
-  adapter: new MongooseAdapter({ mongoUri: 'mongodb://localhost/cypress-test-project' }),
+  adapter: new MongooseAdapter({ url: 'mongodb://localhost/cypress-test-project' }),
   cookieSecret: 'qwerty',
 });
 

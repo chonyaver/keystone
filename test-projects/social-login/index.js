@@ -23,7 +23,7 @@ const LOCAL_FILE_ROUTE = `${staticRoute}/avatars`;
 const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
 
 const keystone = new Keystone({
-  adapter: new MongooseAdapter({ mongoUri: 'mongodb://localhost/cypress-test-project' }),
+  adapter: new MongooseAdapter({ url: 'mongodb://localhost/cypress-test-project' }),
   cookieSecret,
 });
 

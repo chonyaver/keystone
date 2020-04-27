@@ -46,10 +46,7 @@ const testAdapterConnection = async () => {
     const config = await getAdapterConfig();
 
     const Adapter = adapterChoice.name === 'MongoDB' ? MongooseAdapter : KnexAdapter;
-    const adapterConfig =
-      adapterChoice.name === 'MongoDB'
-        ? { mongoUri: config }
-        : { knexOptions: { connection: config } };
+    const adapterConfig = { url: config };
     const adapter = new Adapter(adapterConfig);
     try {
       await adapter._connect();
