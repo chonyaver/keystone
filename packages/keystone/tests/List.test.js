@@ -1281,15 +1281,6 @@ test('deleteManyMutation', async () => {
   ]);
 });
 
-test('getFieldByPath', () => {
-  const list = setup();
-  expect(list.getFieldByPath('name').path).toEqual('name');
-  expect(list.getFieldByPath('email').path).toEqual('email');
-  expect(list.getFieldByPath('hidden').path).toEqual('hidden');
-  expect(list.getFieldByPath('writeOnce').path).toEqual('writeOnce');
-  expect(list.getFieldByPath('missing')).toBe(undefined);
-});
-
 describe('List Hooks', () => {
   describe('change mutation', () => {
     test('provides the expected list API', () => {

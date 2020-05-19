@@ -35,7 +35,7 @@ export class Relationship extends Implementation {
     let refField;
 
     if (refFieldPath) {
-      refField = refList.getFieldByPath(refFieldPath);
+      refField = refList.fieldsByPath[refFieldPath];
 
       if (!refField) {
         throw new Error(
@@ -403,7 +403,7 @@ export class KnexRelationshipInterface extends KnexFieldAdapter {
       }
       // The foreign key needs to do this work for us; we don't know what type it is
       const refList = this.getListByKey(this.refListKey);
-      const refId = refList.getPrimaryKey();
+      const refId = refList.fieldsByPath['id'];
       const foreignKeyConfig = {
         path: this.path,
         isUnique: this.isUnique,
