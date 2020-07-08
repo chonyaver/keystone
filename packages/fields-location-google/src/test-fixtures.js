@@ -1,7 +1,7 @@
 // We need a valid googleMapsKey to be added to CI to make this test runnable
 import { LocationGoogle } from './';
 
-export const name = 'Location';
+export const name = 'LocationGoogle';
 export { LocationGoogle as type };
 export const supportsUnique = false;
 export const skipRequiredTest = true;

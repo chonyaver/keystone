@@ -18,6 +18,7 @@ export const CloudinaryImage = {
   adapters: {
     mongoose: MongoCloudinaryImageInterface,
     knex: KnexCloudinaryImageInterface,
+    prisma: 'FIXME',
   },
   blocks: {
     image: ImageBlock,

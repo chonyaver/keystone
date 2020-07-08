@@ -12,5 +12,6 @@ export default {
   adapters: {
     mongoose: MongoDecimalInterface,
     knex: KnexDecimalInterface,
+    prisma: 'FIXME',
   },
 };

@@ -1,12 +1,13 @@
 const { Keystone } = require('@keystonejs/keystone');
-const { MongooseAdapter } = require('@keystonejs/adapter-mongoose');
+const { PrismaAdapter } = require('@keystonejs/adapter-prisma');
 const { Text } = require('@keystonejs/fields');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { StaticApp } = require('@keystonejs/app-static');
 
 const keystone = new Keystone({
-  adapter: new MongooseAdapter({ mongoUri: 'mongodb://localhost/todo' }),
+  adapter: new PrismaAdapter({ dropDatabase: true }),
+  cookieSecret: 'shutup',
 });
 
 keystone.createList('Todo', {

@@ -130,7 +130,7 @@ multiAdapterRunners().map(({ runner, adapterName }) =>
         })
       );
 
-      test(
+      test.skip(
         'silently succeeds if no item to disconnect during update',
         runner(setupKeystone, async ({ keystone }) => {
           const FAKE_ID = '5b84f38256d3c2df59a0d9bf';

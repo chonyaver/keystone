@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "@keystonejs/adapter-knex": "^11.0.2",
+    "@keystonejs/adapter-prisma": "^0.0.0",
     "@keystonejs/fields": "^17.0.0"
   },
   "main": "dist/fields-auto-increment.cjs.js",

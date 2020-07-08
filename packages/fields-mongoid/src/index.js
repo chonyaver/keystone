@@ -19,12 +19,20 @@ export const MongoId = {
   adapters: {
     knex: KnexMongoIdInterface,
     mongoose: MongooseMongoIdInterface,
+    prisma: 'FIXME',
   },
 
   primaryKeyDefaults: {
     knex: {
       getConfig: () => {
-        throw `The Uuid field type doesn't provide a default primary key field configuration for knex. ` +
+        throw `The MongoId field type doesn't provide a default primary key field configuration for knex. ` +
+          `You'll need to supply your own 'id' field for each list or use a different field type for your ` +
+          `ids (eg '@keystonejs/fields-auto-increment').`;
+      },
+    },
+    prisma: {
+      getConfig: () => {
+        throw `The MongoId field type doesn't provide a default primary key field configuration for knex. ` +
           `You'll need to supply your own 'id' field for each list or use a different field type for your ` +
           `ids (eg '@keystonejs/fields-auto-increment').`;
       },
