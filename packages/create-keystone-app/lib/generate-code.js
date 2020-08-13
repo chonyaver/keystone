@@ -5,7 +5,7 @@ const generateCode = async () => {
   const projectName = await getProjectName();
   const adapterConfig = `{ url: '${await getAdapterConfig()}' }`;
 
-  return `${adapterRequire}
+  return `${adapterConfig}
 const PROJECT_NAME = '${projectName}';
 const adapterConfig = ${adapterConfig};
 `;
