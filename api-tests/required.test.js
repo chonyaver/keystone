@@ -3,12 +3,17 @@ const { multiAdapterRunners, setupServer } = require('@keystonejs/test-utils');
 const { Text } = require('@keystonejs/fields');
 
 describe('Test isRequired flag for all field types', () => {
-  const testModules = globby.sync(`packages/**/src/**/test-fixtures.js`, { absolute: true });
+  const testModules = globby.sync(`packages/**/src/**/test-fixtures.js`, {
+    absolute: true,
+  });
   multiAdapterRunners().map(({ runner, adapterName }) =>
     describe(`Adapter: ${adapterName}`, () => {
       testModules
         .map(require)
-        .filter(({ skipRequiredTest }) => !skipRequiredTest)
+        .filter(
+          ({ skipRequiredTest, unSupportedAdapterList = [] }) =>
+            !skipRequiredTest && !unSupportedAdapterList.includes(adapterName)
+        )
         .forEach(mod => {
           describe(`Test isRequired flag for module: ${mod.name}`, () => {
             const keystoneTestWrapper = testFn =>

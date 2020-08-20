@@ -8,7 +8,10 @@ describe('Test isUnique flag for all field types', () => {
     describe(`Adapter: ${adapterName}`, () => {
       testModules
         .map(require)
-        .filter(({ supportsUnique }) => supportsUnique)
+        .filter(
+          ({ supportsUnique, unSupportedAdapterList = [] }) =>
+            supportsUnique && !unSupportedAdapterList.includes(adapterName)
+        )
         .forEach(mod => {
           describe(`Test isUnique flag for module: ${mod.name}`, () => {
             const keystoneTestWrapper = testFn =>

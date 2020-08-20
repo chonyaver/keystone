@@ -8,23 +8,26 @@ export const exampleValue = '1';
 export const exampleValue2 = '2';
 export const supportsUnique = true;
 
-//NOTE: The AutoIncrement field type behaves in a way that isn't supported by
-// our current uniqueness tests.
+// `AutoIncrement` field type is not supported by `mongoose`. So, we need to filter it out while performing `API` tests.
+export const unSupportedAdapterList = ['mongoose'];
+
+// Be default, `AutoIncrement` are read-only. But for `isRequired` test purpose, we need to bypass these restrictions.
+export const fieldConfig = { access: { create: true, update: true } };
 
 export const getTestFields = () => {
   return {
     name: { type: Text },
-    orderNumber: { type: AutoIncrement, gqlType: 'Int' },
+    orderNumber: { type: AutoIncrement, gqlType: 'Int', access: { create: true } },
   };
 };
 
 export const initItems = () => {
   return [
-    { name: 'product1' },
-    { name: 'product2' },
-    { name: 'product3' },
-    { name: 'product4' },
-    { name: 'product5' },
+    { name: 'product1', orderNumber: 1 },
+    { name: 'product2', orderNumber: 2 },
+    { name: 'product3', orderNumber: 3 },
+    { name: 'product4', orderNumber: 4 },
+    { name: 'product5', orderNumber: 5 },
   ];
 };
 
@@ -202,6 +205,7 @@ export const crudTests = withKeystone => {
       const items = await getItems({
         keystone,
         listKey,
+        sortBy: 'name_ASC',
         returnFields: 'id orderNumber',
       });
       return wrappedFn({ keystone, listKey, items });
@@ -212,18 +216,14 @@ export const crudTests = withKeystone => {
     'Create',
     withKeystone(
       withHelpers(async ({ keystone, listKey }) => {
-        try {
-          await createItem({
-            keystone,
-            listKey,
-            // Create access is false for `orderNumber`
-            item: { name: 'Test product', orderNumber: 1 },
-            returnFields: 'orderNumber',
-          });
-          expect(true).toEqual(false);
-        } catch (error) {
-          expect(error).not.toBe(undefined);
-        }
+        const data = await createItem({
+          keystone,
+          listKey,
+          item: { name: 'Test product', orderNumber: 6 },
+          returnFields: 'orderNumber',
+        });
+        expect(data).not.toBe(null);
+        expect(data.orderNumber).toBe(6);
       })
     )
   );
@@ -263,6 +263,7 @@ export const crudTests = withKeystone => {
             expect(true).toEqual(false);
           } catch (error) {
             expect(error).not.toBe(undefined);
+            expect(error.message).toMatch(/Field "orderNumber" is not defined by type/);
           }
         })
       )
