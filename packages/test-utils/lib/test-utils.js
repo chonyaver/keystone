@@ -14,6 +14,7 @@ async function setupServer({
   createLists = () => {},
   keystoneOptions,
   graphqlOptions = {},
+  apps: extraApps = [],
 }) {
   const Adapter = { mongoose: MongooseAdapter, knex: KnexAdapter }[adapterName];
 
@@ -51,6 +52,7 @@ async function setupServer({
       },
       ...graphqlOptions,
     }),
+    ...extraApps,
   ];
 
   const { middlewares } = await keystone.prepare({ dev: true, apps });

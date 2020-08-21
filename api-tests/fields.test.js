@@ -22,7 +22,7 @@ describe('Fields', () => {
 
                 keystone.createList(listKey, { fields });
               };
-              return setupServer({ adapterName, createLists });
+              return setupServer({ adapterName, createLists, apps: mod.apps });
             },
             async ({ keystone, ...rest }) => {
               // Populate the database before running the tests

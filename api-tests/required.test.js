@@ -28,6 +28,7 @@ describe('Test isRequired flag for all field types', () => {
                         },
                       });
                     },
+                    apps: mod.apps,
                   }),
                 testFn
               );
