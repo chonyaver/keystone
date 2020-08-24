@@ -17,17 +17,17 @@ export const fieldConfig = { access: { create: true, update: true } };
 export const getTestFields = () => {
   return {
     name: { type: Text },
-    orderNumber: { type: AutoIncrement, gqlType: 'Int', access: { create: true } },
+    orderNumber: { type: AutoIncrement, gqlType: 'Int' },
   };
 };
 
 export const initItems = () => {
   return [
-    { name: 'product1', orderNumber: 1 },
-    { name: 'product2', orderNumber: 2 },
-    { name: 'product3', orderNumber: 3 },
-    { name: 'product4', orderNumber: 4 },
-    { name: 'product5', orderNumber: 5 },
+    { name: 'product1' },
+    { name: 'product2' },
+    { name: 'product3' },
+    { name: 'product4' },
+    { name: 'product5' },
   ];
 };
 
@@ -216,14 +216,19 @@ export const crudTests = withKeystone => {
     'Create',
     withKeystone(
       withHelpers(async ({ keystone, listKey }) => {
-        const data = await createItem({
-          keystone,
-          listKey,
-          item: { name: 'Test product', orderNumber: 6 },
-          returnFields: 'orderNumber',
-        });
-        expect(data).not.toBe(null);
-        expect(data.orderNumber).toBe(6);
+        try {
+          await createItem({
+            keystone,
+            listKey,
+            // orderNumber is 'read-only' field, and is not part of graphql schema
+            item: { name: 'Test product', orderNumber: 6 },
+            returnFields: 'orderNumber',
+          });
+          expect(true).toEqual(false);
+        } catch (error) {
+          expect(error).not.toBe(undefined);
+          expect(error.message).toMatch(/Field "orderNumber" is not defined by type/);
+        }
       })
     )
   );
