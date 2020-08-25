@@ -36,6 +36,12 @@ describe('Fields', () => {
           );
 
         describe(`${mod.name} field`, () => {
+          afterAll(async () => {
+            if (mod.afterAll) {
+              await mod.afterAll();
+            }
+          });
+
           if (mod.crudTests) {
             describe(`CRUD operations`, () => {
               mod.crudTests(keystoneTestWrapper);
