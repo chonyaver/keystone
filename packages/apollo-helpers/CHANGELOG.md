@@ -1,5 +1,11 @@
 # @keystonejs/apollo-helpers
 
+## 5.1.6
+
+### Patch Changes
+
+- [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc) [#3438](https://github.com/keystonejs/keystone/pull/3438) Thanks [@renovate](https://github.com/apps/renovate)! - Updated Apollo GraphQL package dependencies.
+
 ## 5.1.5
 
 ### Patch Changes

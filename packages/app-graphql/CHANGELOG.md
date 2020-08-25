@@ -1,5 +1,15 @@
 # @keystonejs/app-graphql
 
+## 6.1.1
+
+### Patch Changes
+
+- [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc) [#3438](https://github.com/keystonejs/keystone/pull/3438) Thanks [@renovate](https://github.com/apps/renovate)! - Updated Apollo GraphQL package dependencies.
+
+- Updated dependencies [[`db0797f7f`](https://github.com/keystonejs/keystone/commit/db0797f7f442c2c42cc941633930de527c722f48), [`e195810a1`](https://github.com/keystonejs/keystone/commit/e195810a1d63cba34f8962b95b84a4955bee246b), [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc)]:
+  - @keystonejs/session@8.1.1
+  - @keystonejs/app-graphql-playground@5.1.6
+
 ## 6.1.0
 
 ### Minor Changes

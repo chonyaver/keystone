@@ -1,5 +1,11 @@
 # @arch-ui/docs
 
+## 1.1.26
+
+### Patch Changes
+
+- [`890f13834`](https://github.com/keystonejs/keystone/commit/890f1383421f4c3371e240ef1dca2eaaa808cb54) [#3449](https://github.com/keystonejs/keystone/pull/3449) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@reach/router` to `^1.3.4`.
+
 ## 1.1.25
 
 ### Patch Changes

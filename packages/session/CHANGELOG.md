@@ -1,5 +1,11 @@
 # @keystonejs/session
 
+## 8.1.1
+
+### Patch Changes
+
+- [`db0797f7f`](https://github.com/keystonejs/keystone/commit/db0797f7f442c2c42cc941633930de527c722f48) [#3465](https://github.com/keystonejs/keystone/pull/3465) Thanks [@timleslie](https://github.com/timleslie)! - Removed unused body-parser dependency.
+
 ## 8.1.0
 
 ### Minor Changes

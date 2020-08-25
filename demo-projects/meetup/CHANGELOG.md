@@ -1,5 +1,21 @@
 # @keystonejs/demo-project-meetup
 
+## 6.2.3
+
+### Patch Changes
+
+- [`db0797f7f`](https://github.com/keystonejs/keystone/commit/db0797f7f442c2c42cc941633930de527c722f48) [#3465](https://github.com/keystonejs/keystone/pull/3465) Thanks [@timleslie](https://github.com/timleslie)! - Removed unused body-parser dependency.
+
+* [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc) [#3438](https://github.com/keystonejs/keystone/pull/3438) Thanks [@renovate](https://github.com/apps/renovate)! - Updated Apollo GraphQL package dependencies.
+
+* Updated dependencies [[`db0797f7f`](https://github.com/keystonejs/keystone/commit/db0797f7f442c2c42cc941633930de527c722f48), [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc), [`ea367f759`](https://github.com/keystonejs/keystone/commit/ea367f7594f47efc3528d9917cce010b3a16bf4d), [`0153168d7`](https://github.com/keystonejs/keystone/commit/0153168d73ce8cd7ede4eb9c8518e5e2bf859709)]:
+  - @keystonejs/session@8.1.1
+  - @keystonejs/app-admin-ui@7.3.3
+  - @keystonejs/app-graphql@6.1.1
+  - @keystonejs/fields@17.0.1
+  - @keystonejs/keystone@14.0.1
+  - @keystonejs/fields-wysiwyg-tinymce@5.3.7
+
 ## 6.2.2
 
 ### Patch Changes

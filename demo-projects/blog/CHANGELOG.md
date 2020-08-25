@@ -1,5 +1,20 @@
 # keystone_demo_blog
 
+## 6.2.2
+
+### Patch Changes
+
+- [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc) [#3438](https://github.com/keystonejs/keystone/pull/3438) Thanks [@renovate](https://github.com/apps/renovate)! - Updated Apollo GraphQL package dependencies.
+
+- Updated dependencies [[`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc), [`ea367f759`](https://github.com/keystonejs/keystone/commit/ea367f7594f47efc3528d9917cce010b3a16bf4d), [`339299183`](https://github.com/keystonejs/keystone/commit/339299183ff00661d36a1561d8e3de19abc5945c), [`0153168d7`](https://github.com/keystonejs/keystone/commit/0153168d73ce8cd7ede4eb9c8518e5e2bf859709)]:
+  - @keystonejs/app-admin-ui@7.3.3
+  - @keystonejs/app-graphql@6.1.1
+  - @keystonejs/fields@17.0.1
+  - @keystonejs/keystone@14.0.1
+  - @keystonejs/fields-markdown@5.2.6
+  - @keystonejs/fields-wysiwyg-tinymce@5.3.7
+  - @keystonejs/fields-authed-relationship@1.0.12
+
 ## 6.2.1
 
 ### Patch Changes

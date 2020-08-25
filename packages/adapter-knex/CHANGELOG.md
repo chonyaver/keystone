@@ -1,5 +1,14 @@
 # @keystonejs/adapter-knex
 
+## 11.0.3
+
+### Patch Changes
+
+- [`096d13fc2`](https://github.com/keystonejs/keystone/commit/096d13fc25696ed1769cf817b705dfd80da601b2) [#3463](https://github.com/keystonejs/keystone/pull/3463) Thanks [@timleslie](https://github.com/timleslie)! - Fixed bug when querying through a many-to-one-to-one relationship chain.
+
+- Updated dependencies [[`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc)]:
+  - @keystonejs/keystone@14.0.1
+
 ## 11.0.2
 
 ### Patch Changes

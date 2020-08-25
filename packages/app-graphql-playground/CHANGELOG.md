@@ -1,5 +1,16 @@
 # @keystonejs/app-graphql-playground
 
+## 5.1.6
+
+### Patch Changes
+
+- [`e195810a1`](https://github.com/keystonejs/keystone/commit/e195810a1d63cba34f8962b95b84a4955bee246b) [#3461](https://github.com/keystonejs/keystone/pull/3461) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `body-parser` to `^1.19.0`.
+
+* [`877a5a90d`](https://github.com/keystonejs/keystone/commit/877a5a90d608f0a13b6c0ea103cb96e3ac2caacc) [#3438](https://github.com/keystonejs/keystone/pull/3438) Thanks [@renovate](https://github.com/apps/renovate)! - Updated Apollo GraphQL package dependencies.
+
+* Updated dependencies [[`db0797f7f`](https://github.com/keystonejs/keystone/commit/db0797f7f442c2c42cc941633930de527c722f48)]:
+  - @keystonejs/session@8.1.1
+
 ## 5.1.5
 
 ### Patch Changes
